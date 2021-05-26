@@ -1,0 +1,29 @@
+{% extends "registrasi/base.html" %}
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Full Name</td>
+            <td> Mobile</td>
+            <td> Position</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employed in employed_list %}
+            <tr>
+                <td>{{employed.fullname}}</td>
+                <td>{{employed.mobile}}</td>
+                <td>{{employed.position}}</td>
+                <td>
+                    <a href="">
+                        <button type="submit" class="btn btn-warning">edit</button>
+                        <button type="submit" class="btn btn-danger">hapus</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
